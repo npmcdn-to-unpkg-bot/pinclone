@@ -6,6 +6,10 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
+  # Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.1-Q16'
+  # Paperclip.options[:content_type_mappings] = { jpg: "image/jpeg" }
+
   config.cache_classes = false
 
   # Do not eager load code on boot.

@@ -4,6 +4,11 @@
   <strong>Description:</strong>
   <%= @pin.description %>
 </p>
+<p>
+<!--<%= image_tag(@pin.pin_image.url) %>-->
+<%= image_tag(@pin.pin_image.url(:thumb)) %>
+
+</p>
 
 <%= link_to 'Edit', edit_pin_path(@pin) %> |
 <%= link_to 'Back', pins_path %>
