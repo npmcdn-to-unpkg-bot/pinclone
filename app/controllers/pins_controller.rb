@@ -25,10 +25,14 @@ class PinsController < ApplicationController
   # POST /pins.json
   def create
     @pin = current_user.pins.build(pin_params)
-    if @pin.save
-      redirect_to @pin
-    else
-      render 'new'
+    respond_to do |format|
+      if @pin.save
+        format.html {redirect_to pins_path, notice: 'Pin successfully created.'}
+        format.json {render :show, status: :created, location: @pin}
+      else
+        format.html {render :new}
+        format.json {render json: @pin.errors, status: :unprocessable_entity}
+      end
     end
   end
 

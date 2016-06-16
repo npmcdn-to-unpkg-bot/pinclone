@@ -1,6 +1,23 @@
-<div class = "container">
-  <%= render "layouts/all_pins" %>
+<div class = "row pinterestGrid">
+  <% @pins.each do |pin| %>
+    <div class = "col-md-3 pin-item">
+      <div class="panel panel-default pin">
+        <div class="panel-body">
+          <%= image_tag(pin.pin_image.url(:medium), class: "img-responsive") %>
+        </div>
+        <div class="panel-footer">
+          <p><%= pin.description %></p>
+          <%= link_to 'Edit', edit_pin_path(pin) %>
+          <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
+
+<!--<div class = "container">
+  <%= render "layouts/all_pins" %>
+</div>-->
 <!--<p id="notice"><%= notice %></p>
 <h1>Listing Pins</h1>
 
