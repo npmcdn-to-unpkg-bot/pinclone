@@ -1,6 +1,6 @@
 <div class = "row pinterestGrid">
   <% @pins.each do |pin| %>
-    <div class = "col-md-3 pin-item">
+    <div class = "col-xs-12 col-sm-6 col-md-3 pin-item">
       <div class="panel panel-default pin">
         <div class="panel-body">
           <%= image_tag(pin.pin_image.url(:medium), class: "img-responsive") %>
