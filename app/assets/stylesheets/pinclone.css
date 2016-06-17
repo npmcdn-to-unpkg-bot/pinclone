@@ -4,6 +4,7 @@ body {
 
 .panel-body {
   padding: 0px;
+  background-color: red
 }
 
 .pin img {
