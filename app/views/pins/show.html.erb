@@ -1,14 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div class = "container">
+  <p><strong><%= @pin.description %></strong></p>
+  <!--<%= image_tag(@pin.pin_image.url) %>-->
+  <p><%= image_tag(@pin.pin_image.url()) %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
-<p>
-<!--<%= image_tag(@pin.pin_image.url) %>-->
-<%= image_tag(@pin.pin_image.url(:thumb)) %>
-
-</p>
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+  <% if @pin.user == current_user %>
+    <%= link_to 'Edit', edit_pin_path(@pin) %> |
+    <%= link_to 'Back', pins_path %>
+  <% end %>
+</div>

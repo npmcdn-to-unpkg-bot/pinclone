@@ -1,14 +1,19 @@
 <div class = "row pinterestGrid">
   <% @pins.each do |pin| %>
-    <div class = "col-xs-12 col-sm-6 col-md-3 col-lg-2 pin-item">
+    <div class = "col-xs-12 col-sm-6 col-md-3 pin-item">
       <div class="panel panel-default pin">
         <div class="panel-body">
-          <%= image_tag(pin.pin_image.url(:medium), class: "img-responsive") %>
+          <p><strong><%= pin.description %></strong></p>
+          <%= link_to image_tag(pin.pin_image.url(:medium), class: "img-responsive"), pin %>
         </div>
         <div class="panel-footer">
-          <p><%= pin.description %></p>
-          <%= link_to 'Edit', edit_pin_path(pin) %>
-          <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <p><strong><%= link_to pin.user.username, user_path(pin.user.username) %></strong></p>
+          <% if pin.user == current_user %>
+            <div>
+              <%= link_to 'Edit', edit_pin_path(pin) %>
+              <%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

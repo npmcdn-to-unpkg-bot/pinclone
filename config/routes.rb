@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
   root to: redirect('/users/sign_in')
 
+  get ':username' => 'users#show', as: 'user'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

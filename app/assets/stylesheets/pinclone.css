@@ -9,3 +9,15 @@ body {
 .pin img {
   width: 100%;
 }
+
+.navbar .nav > li > a {
+  color: white;
+}
+
+.navbar {
+  background-color: black;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
