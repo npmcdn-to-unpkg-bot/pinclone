@@ -10,6 +10,10 @@ body {
   width: 100%;
 }
 
+.navbar .nav > li {
+  color: white;
+}
+
 .navbar .nav > li > a {
   color: white;
 }

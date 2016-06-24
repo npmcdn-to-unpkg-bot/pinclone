@@ -1,6 +1,6 @@
+<%= image_tag(@user.avatar.url(:thumb)) %>
 <h2><%= @user.username %></h2>
-<p><%= link_to 'Edit profile', edit_user_registration_path %></p>
-<%= @user.bio %>
+<%= @user.bio %><br /><br />
   <div class = "row pinterestGrid">
     <% @user.pins.each do |pin| %>
       <div class = "col-xs-12 col-sm-6 col-md-3 pin-item">

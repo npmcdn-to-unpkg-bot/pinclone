@@ -1,8 +1,6 @@
 <div class = "container">
   <p><strong><%= @pin.description %></strong></p>
-  <!--<%= image_tag(@pin.pin_image.url) %>-->
   <p><%= image_tag(@pin.pin_image.url()) %></p>
-
   <% if @pin.user == current_user %>
     <%= link_to 'Edit', edit_pin_path(@pin) %> |
     <%= link_to 'Back', pins_path %>
